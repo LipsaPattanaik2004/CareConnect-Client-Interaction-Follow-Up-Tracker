@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CareConnect Tracker</title>
+</head>
+<body>
+
+<h2>Client Interaction Tracker</h2>
+
+<form action="/add" method="post">
+    Name: <input type="text" name="name" required><br><br>
+    Query: <input type="text" name="query" required><br><br>
+    Follow-up Date: <input type="date" name="followup" required><br><br>
+    <button type="submit">Add Client</button>
+</form>
+
+<h3>Client Records</h3>
+<table border="1">
+<tr>
+    <th>Name</th>
+    <th>Query</th>
+    <th>Follow-up</th>
+    <th>Status</th>
+</tr>
+
+{% for row in data %}
+<tr>
+    <td>{{row[1]}}</td>
+    <td>{{row[2]}}</td>
+    <td>{{row[3]}}</td>
+    <td>{{row[4]}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
